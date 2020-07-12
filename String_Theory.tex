@@ -1,4 +1,5 @@
-\documentclass[11pt]{beamer}
+\documentclass[11pt,aspectratio=169]{beamer}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -6,7 +7,9 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+
 \usetheme{Madrid}
+
 \begin{document}
 	\author{Mate Zoltan Farkas}
 	\title{An Introduction to String Theory}
@@ -15,13 +18,33 @@
 	%\institute{}
 	%\date{}
 	%\subject{}
-	%\setbeamercovered{transparent}
+	\setbeamercovered{transparent}
 	\setbeamertemplate{navigation symbols}{}
+	
 	\begin{frame}[plain]
 		\maketitle
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{}
+		\frametitle{Table of Contents}
+		\tableofcontents
 	\end{frame}
+
+	\section{Introduction}
+	
+	\begin{frame}
+		\begin{itemize}
+			%\centering
+			\item<1,2,3>first item
+			\item<2,3>second item
+			\item<3>third item
+		\end{itemize}	
+	\end{frame}
+
+	\section{Actions}
+	
+	\begin{frame}
+		\frametitle{The Actions}
+	\end{frame}
+
 \end{document}

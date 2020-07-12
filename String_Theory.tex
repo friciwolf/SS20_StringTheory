@@ -10,7 +10,11 @@
 
 \usetheme{Madrid}
 
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subsubitem}[square]
+
 \begin{document}
+	
 	\author{Mate Zoltan Farkas}
 	\title{An Introduction to String Theory}
 	%\subtitle{}
@@ -33,11 +37,18 @@
 	\section{Introduction}
 	
 	\begin{frame}
-		\begin{itemize}
+		\frametitle{Never forget the Titles!}
+		\begin{itemize}[]
 			%\centering
-			\item<1,2,3>first item
-			\item<2,3>second item
-			\item<3>third item
+			\item<1,2,3,4,5>first item
+				\begin{itemize}
+					\item<2,3,4,5> subitem
+					\begin{itemize}
+						\item<3,4,5> subsubitem
+					\end{itemize}
+				\end{itemize}
+			\item<4,5>second item
+			\item<5>third item
 		\end{itemize}	
 	\end{frame}
 
@@ -45,6 +56,23 @@
 	
 	\begin{frame}
 		\frametitle{The Actions}
+	\end{frame}
+
+	\section{Covariant Quantization of the Solutions}
+	
+	\begin{frame}
+		\frametitle{Covariant Quantization of the Solutions of the Nambu-Goto Action}
+		
+		\begin{equation}
+			S = \frac{1}{2\pi\alpha'}\int\sqrt{-\det g} \, \partial_\mu
+		\end{equation}
+	
+	\end{frame}	
+
+	\section{Quantization in the Lightcone Gauge}
+	
+	\begin{frame}
+		\frametitle{Quantization of $X^\mu$ in the Lightcone Gauge}
 	\end{frame}
 
 \end{document}

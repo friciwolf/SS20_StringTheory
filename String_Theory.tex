@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_GB
 \documentclass[11pt,aspectratio=169]{beamer}
 
 \usepackage[utf8]{inputenc}
@@ -12,6 +13,8 @@
 
 \setbeamertemplate{itemize item}[triangle]
 \setbeamertemplate{itemize subsubitem}[square]
+\setbeamertemplate{enumerate item}[default]
+\setbeamertemplate{enumerate subitem}[default]
 
 \begin{document}
 	
@@ -35,19 +38,28 @@
 	\end{frame}
 
 	\section{Introduction}
+	\subsection{Notation}
 	
 	\begin{frame}
 		\frametitle{Never forget the Titles!}
-		\begin{itemize}[]
+		\begin{itemize}
 			%\centering
-			\item<1,2,3,4,5>first item
+			\item<1,2,3,4,5> first item 
+			\begin{itemize}
+				\item<2,3,4,5> subitem
 				\begin{itemize}
-					\item<2,3,4,5> subitem
-					\begin{itemize}
-						\item<3,4,5> subsubitem
-					\end{itemize}
+					\item<3,4,5> subsubitem
 				\end{itemize}
+			\end{itemize}
 			\item<4,5>second item
+			\begin{enumerate}
+				\item item 1
+				\begin{enumerate}
+					\item subitem 1
+					\item subitem 2
+				\end{enumerate}
+				\item item 2
+			\end{enumerate}
 			\item<5>third item
 		\end{itemize}	
 	\end{frame}

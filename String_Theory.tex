@@ -9,6 +9,15 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{bigints}
+\usepackage{verbatim}
+\usepackage[export]{adjustbox}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+
+
+\bibliography{String_Theory.bib}
+
 
 \usetheme{Madrid}
 
@@ -58,12 +67,27 @@
 	\begin{frame}
 		\frametitle{The Relativistic String -- The Action}
 		\begin{itemize}[]
-			\item<1,2>[item label]
+			\item<1-> Consider the action of a point particle (with fixed coordinates $X_\mu = (t,\vec{x})$ in a given frame):
+			\begin{equation*}
+				S = -m \int dt \sqrt{1-\dot{\vec{x}}\dot{\vec{x}}}
+			\end{equation*}
+			\item<1->[] $\rightarrow$ not Lorentz-invariant, due to mixture of spacial and temporal coordinates under a Lorentz-transformation $\Lambda$.
+			\item[]
+			\item<2-> Consider instead ($X_\mu = \frac{dX_\mu}{d\tau}$ for a generalized coordinate $\tau$ along the line element):
+			\begin{columns}
+				\begin{column}{0.8\textwidth}
+					\begin{equation*}
+						S = -m \int d\tau \sqrt{-\dot{X}_\mu\dot{X}^\mu}
+					\end{equation*}
+				\end{column}
+				\begin{column}{0.2\textwidth}
+					\begin{figure}
+						\includegraphics[width=0.5\linewidth]{res/TongP17_graph}
+						\caption{\cite{tong_lectures_2012}}
+					\end{figure}
+				\end{column}
+			\end{columns}
 		\end{itemize}
-		Consider the action of a point particle:
-		\begin{equation*}
-			S = -m \int dt x \sqrt{1-\dot{\vec{x}}\dot{\vec{x}}}
-		\end{equation*}
 	\end{frame}
 	
 	\begin{frame}
@@ -105,6 +129,11 @@
 	
 	\begin{frame}
 		\frametitle{Quantization of $X^\mu$ in the Lightcone Gauge}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{References}
+		\printbibliography
 	\end{frame}
 
 \end{document}

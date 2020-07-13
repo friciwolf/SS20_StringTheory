@@ -1,15 +1,18 @@
 % !TeX spellcheck = en_GB
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[aspectratio=169]{beamer}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage{fontspec}
 \usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
 \usetheme{Madrid}
+
+\usefonttheme{professionalfonts}
 
 \setbeamertemplate{itemize item}[triangle]
 \setbeamertemplate{itemize subsubitem}[square]
@@ -41,6 +44,29 @@
 	\subsection{Notation}
 	
 	\begin{frame}
+		\frametitle{Introduction -- Notation}
+		\begin{itemize}
+			\item Metric:
+			\begin{itemize}
+				\item $\eta_{\mu\nu}$ = diag(-1,+1, $\dots$, +1)
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\section{The Relativistic String -- The Action}
+	
+	\begin{frame}
+		\frametitle{The Relativistic String -- The Action}
+		\begin{itemize}[]
+			\item<1,2>[item label]
+		\end{itemize}
+		Consider the action of a point particle:
+		\begin{equation*}
+			S = -m \int dt x \sqrt{1-\dot{\vec{x}}\dot{\vec{x}}}
+		\end{equation*}
+	\end{frame}
+	
+	\begin{frame}
 		\frametitle{Never forget the Titles!}
 		\begin{itemize}
 			%\centering
@@ -62,12 +88,6 @@
 			\end{enumerate}
 			\item<5>third item
 		\end{itemize}	
-	\end{frame}
-
-	\section{Actions}
-	
-	\begin{frame}
-		\frametitle{The Actions}
 	\end{frame}
 
 	\section{Covariant Quantization of the Solutions}

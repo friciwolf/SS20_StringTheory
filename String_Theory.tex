@@ -13,6 +13,7 @@
 \usepackage{bigints}
 \usepackage{verbatim}
 \usepackage{caption}
+\usepackage{mathtools}
 \usepackage[export]{adjustbox}
 \usepackage[backend=bibtex,style=numeric]{biblatex}
 
@@ -252,43 +253,93 @@
 			\end{equation*}
 			\color{red} Plot of the transformation in action
 		\end{itemize}
-		
-	\end{frame}	
-	
-	\begin{frame}
-		\frametitle{Never forget the Titles!}
-		\begin{itemize}
-			%\centering
-			\item<1,2,3,4,5> first item 
-			\begin{itemize}
-				\item<2,3,4,5> subitem
-				\begin{itemize}
-					\item<3,4,5> subsubitem
-				\end{itemize}
-			\end{itemize}
-			\item<4,5>second item
-			\begin{enumerate}
-				\item item 1
-				\begin{enumerate}
-					\item subitem 1
-					\item subitem 2
-				\end{enumerate}
-				\item item 2
-			\end{enumerate}
-			\item<5>third item
-		\end{itemize}	
 	\end{frame}
 
-	\section{Covariant Quantization of the Solutions}
-	
+	\section{Equation of Motion of the Polyakov Action}
+
 	\begin{frame}
-		\frametitle{Covariant Quantization of the Solutions of the Nambu-Goto Action}
-		
+		\frametitle{Equation of Motion of the Polyakov Action}
+		With $g_{\alpha\beta} = \eta_{\alpha\beta}$ the EoMs
 		\begin{equation*}
-			S = \frac{1}{2\pi\alpha'}\int\sqrt{-\det g} \, \partial_\mu
+			\begin{cases}
+				\partial_\alpha\left(\sqrt{-g}\,g^{\alpha\beta}\partial_\beta X^{\mu}\right) = 0 \\
+				g_{\alpha\beta} =  2 \frac{\partial_\alpha X \partial_\beta X}{g^{\rho\sigma}\partial_\rho X \partial_\sigma X}
+			\end{cases}
 		\end{equation*}
-	
+		are reduced to:
+		\begin{equation*}
+			\begin{cases}
+				\partial_\alpha\partial^\alpha X^{\mu} & = 0 \\
+				T_{\alpha\beta} &= \partial_\alpha X \partial_\beta X - \frac{1}{2} \eta_{\alpha\beta} \eta^{\mu\nu} \partial_\mu X \partial_\nu X = 0
+			\end{cases}
+		\end{equation*}
+		With the second constraints explicitly as:
+		\begin{equation*}
+			\begin{cases}
+			T_{01} &= \dot{X}\cdot X' = 0 \\
+			T_{00} &= T_{11} = \frac{1}{2} \left(\dot{X}^2 + X'^2 \right) = 0
+			\end{cases}
+		\end{equation*}
 	\end{frame}	
+
+	\begin{frame}
+		\frametitle{Solution to the EoMs}
+		To find a solution, define the lightcone coordinates as
+		\begin{equation*}
+			\sigma^\pm = \tau\pm\sigma
+		\end{equation*}
+		Then, the EoMs are given by
+		\begin{equation*}
+			\begin{cases}
+				\partial_+\partial_-X^\mu &= 0 \\
+				(\partial_+X)^2 &= 0 \qquad, \text{with} \, X^\mu(\tau,\sigma) = X^\mu(\tau,\sigma+2\pi) \\
+				(\partial_-X)^2 &= 0 \\
+			\end{cases}
+		\end{equation*}
+		\begin{align*}
+			\Rightarrow X^\mu(\tau,\sigma) & = X^\mu_L(\sigma^+) + X^\mu_R(\sigma^-) \\
+			X^\mu_{L}(\sigma^+) &= \frac{1}{2}x^\mu + \frac{1}{2} \alpha' p^\mu \sigma^+ + i\sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n} \tilde{\alpha}^\mu e^{-in\sigma^+} \\
+			X^\mu_{R}(\sigma^-) &= \frac{1}{2}x^\mu + \frac{1}{2} \alpha' p^\mu \sigma^- + i\sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n} \alpha^\mu e^{-in\sigma^-} \\
+		\end{align*}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Solution to the EoMs}
+		The constraints $\left(\partial_\pm X\right)^2 = 0$:
+		\begin{itemize}
+			\item First:
+			\begin{align*}
+				\partial_- X^\mu = \frac{\alpha'}{2} p^\mu + \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0 } \alpha^\mu_n e^{-in\sigma^-} & \equiv \sum_{n} \alpha^\mu_n e^{-in\sigma^-} \\
+				\text{with} \quad \alpha^\mu_0 & = \sqrt{\frac{\alpha'}{2}}p^\mu \\
+			\end{align*}
+			\item Then:
+			\begin{align*}
+				\left(\partial_-X\right)^2 &= \frac{\alpha'}{2} \sum_{n,p} \alpha_m \alpha_n e^{-i(n+m)\sigma^-}\\
+				& = \alpha' \sum_n \underbrace{\frac{1}{2} \sum_m \alpha_m \alpha_{n-m} e^{-in\sigma^-}}_{L_n} \stackrel{!}{=} 0
+			\end{align*}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Solution to the EoMs}
+		$\Rightarrow \infty$ number of constraints on $L_n$: 
+		\begin{equation*}
+			L_n = \tilde{L}_n = 0
+		\end{equation*}
+		However, $L_0$ contains the mass $M = -p^2$ as:
+		\begin{align*}
+			L_0 &= \frac{\alpha'}{2}p^2 + \frac{1}{2} \sum_{m>0} \alpha_m \alpha_{-m} e^{-in\sigma^-} \\
+			& \Rightarrow M^2 = \frac{4}{\alpha'} \sum_{m>0}\alpha_m\alpha_{-m} = \frac{4}{\alpha'} \sum_{m>0}\tilde{\alpha}_m\tilde{\alpha}_{-m}
+		\end{align*}
+		$\Rightarrow$ \textbf{Level matching}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Polyakov Action -- Summary}
+		{\Huge \color{red} A brief summary before moving to the covariant quantization}
+	\end{frame}
+
+	\section{Covariant Quantization of the  Classical Solutions}	
 
 	\section{Quantization in the Lightcone Gauge}
 	

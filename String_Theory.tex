@@ -54,15 +54,21 @@
 	
 	\begin{frame}
 		\frametitle{Introduction -- Notation}
+		\LARGE \color{red} Not necessary?
+		\color{black}
 		\begin{itemize}
 			\item Metric:
 			\begin{itemize}
 				\item $\eta_{\mu\nu}$ = diag(-1,+1, $\dots$, +1)
 			\end{itemize}
+			\item Products
+			\begin{itemize}
+				\item $X^2 = X^\mu X^\nu \eta_{\mu\nu}$
+			\end{itemize}
 		\end{itemize}
 	\end{frame}
 
-	\section{The Relativistic String}
+	\section{The Relativistic Closed String}
 	\subsection{The Relativistic Point Particle}
 	
 	\begin{frame}
@@ -255,7 +261,7 @@
 		\end{itemize}
 	\end{frame}
 
-	\section{Equation of Motion of the Polyakov Action}
+	\subsection{Equation of Motions from the Polyakov Action \& Classical Solutions}
 
 	\begin{frame}
 		\frametitle{Equation of Motion of the Polyakov Action}
@@ -341,15 +347,109 @@
 
 	\section{Covariant Quantization of the  Classical Solutions}	
 
-	\section{Quantization in the Lightcone Gauge}
-	
 	\begin{frame}
-		\frametitle{Quantization of $X^\mu$ in the Lightcone Gauge}
+		\frametitle{Covariant Quantization}
+		First, promote $X^\mu$ and $\Pi^\mu = 1/2\pi\alpha' \dot{X}^\mu$ to operators with the usual commutators:
+		\begin{equation*}
+			\left[X^\mu(\tau,\sigma), \Pi^\nu(\tau,\sigma')\right] = i\delta(\sigma'-\sigma)\delta^{\mu\nu}
+		\end{equation*}
+		Then:
+		\begin{align*}
+			\left[x^\mu,p_\nu\right] &= i\delta^\mu_\nu \\
+			\left[\alpha^\mu_n, \alpha^\nu_m\right] = \left[\tilde{\alpha}^\mu_n, \tilde{\alpha}^\nu_m\right] &= n \eta^{\mu\nu} \delta_{n,-m}
+		\end{align*}
+		Introduce the creation operators as
+		\begin{equation*}
+			a_n = \frac{\alpha_n}{\sqrt{n}}, \quad a^\dagger_n = \frac{\alpha_{-n}}{\sqrt{n}}, \quad n>0
+		\end{equation*}
+		which gives the usual
+		\begin{equation*}
+			\left[a_n,a^\dagger_m\right] = \delta_{nm}
+		\end{equation*}
+		$\Rightarrow$ construction of the Fock space!
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{References}
-		\printbibliography
+		\frametitle{Covariant Quantization}
+		$1^{st}$ problem with this approach: appearance of ghosts, due to the relation:
+		\begin{equation*}
+			\left[\alpha^\mu_n, \alpha^\nu_m\right] = n \eta^{\mu\nu} \delta_{n,-m} \quad \rightarrow \quad \text{negative norms} \quad \rightarrow \quad \text{ghosts (unphysical)}
+		\end{equation*}
+		$2^{nd}$ problem: operator ambiguity in $L_n$; how to order the operators?
+		\begin{equation*}
+			L_n = \frac{1}{2} \sum_{m} \alpha_{n-m} \alpha_m
+		\end{equation*}
+		\color{red} \Large Include the introduction of $a$ here?
 	\end{frame}
+
+	\section{Quantization in the Lightcone Gauge}
+	
+	\begin{frame}
+		\frametitle{Quantization in the Lightcone Gauge}
+		To resolve these problems, introduce lightcone coordinates \color{red}{how deeply?} \color{black}
+		\begin{align*}
+			X^\pm = \sqrt{\frac{1}{2}} \left(X^0\right.&\left.\pm X^{D-1}\right)\\
+			\Rightarrow ds^2 = -2\cdot dX^+dX^- &+ \sum_{i=1}^{D-2}dX^idX^i
+		\end{align*}
+		and solve the EoMs with $X^\pm = X^\pm_L(\sigma^+) + X^\pm_R(\sigma^-)$
+		\begin{equation*}
+%			\begin{cases}
+				\partial_+\partial_-X^\mu = 0 \quad (\partial_+X)^2 = 0 \quad (\partial_-X)^2 = 0 
+%			\end{cases}
+		\end{equation*}
+		Solution for $X^-$:
+		\begin{align*}
+			X^-_L(\sigma^+) &= \frac{1}{2}x^⁻ + \frac{1}{2} \alpha' p^- \sigma^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n}\tilde{\alpha}^- e^{-in\sigma^+}\\
+			X^-_R(\sigma^-) &= \frac{1}{2}x^- + \frac{1}{2} \alpha' p^-\sigma^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n}\alpha^- e^{-in\sigma^-} \\
+		\end{align*}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Quantization in the Lightcone Gauge}
+		Now, the oscillator modes $\alpha^-_n$:
+		\begin{equation*}
+			\alpha_n^- = \sqrt{\frac{1}{2\alpha'}} \frac{1}{p^+} \sum_{m=-\infty}^{m=+\infty}\sum_{i=1}^{D-2}\alpha^i_{n-m}\alpha^i_m
+		\end{equation*}
+		And, the level matching condition becomes:
+		\begin{equation*}
+			M^2 = \frac{4}{\alpha'} \sum_{i=1}^{D-2}\sum_{max}^{n>0}\alpha^i_{-n}\alpha^i_n = \frac{4}{\alpha'} \sum_{i=1}^{D-2}\sum_{max}^{n>0}\tilde{\alpha}^i_{-n}\tilde{\alpha}^i_n 
+		\end{equation*}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Quantization \& Constraints}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{The Critical Dimension \& Resolving the Ambiguity}
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{The First Excited States and the Emergence of the Graviton}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{The First Excited States and the Emergence of the Graviton}
+	\end{frame}
+
+	\section{Open Strings and D-Branes}
+	
+	\begin{frame}
+		\frametitle{The Polyakov Action and Boundary Conditions}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{The EoMs and its Solutions \& Quantization}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Bosonic States}
+	\end{frame}
+
+%	\begin{frame}
+%		\frametitle{References}
+%		\printbibliography
+%	\end{frame}
 
 \end{document}

@@ -120,7 +120,8 @@
 		\end{itemize}
 	\end{frame}
 
-	\subsection{Dynamics of a Relativistic String -- The Nambu-Goto Action}
+	\subsection{Dynamics of a Relativistic String}
+	\subsubsection{The Nambu-Goto Action}
 
 	\begin{frame}[t]
 		\frametitle{Dynamics of a Relativistic String -- The Nambu-Goto Action}
@@ -161,10 +162,11 @@
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{Dynamics of a Relativistic String -- The Nambu-Goto Action}
 		How to describe the surface area to construct the action?
-		\begin{equation}
+		\begin{equation*}
 			S \propto \int\displaylimits_{\partial V} d^2x = \int\displaylimits_{\partial V}d^2\sigma \left| \det J \right|
-		\end{equation}
+		\end{equation*}
 		\color{red}{For this, first remember that any metric is given by:}
 		\begin{equation*}
 			g_{\alpha\beta} = g(e_\alpha,e_\beta)
@@ -176,14 +178,82 @@
 		\end{equation*}
 		Thus,
 		\begin{equation*}
-			\det \gamma = \det{^2} J \det \eta = - \det{^2} J
+			\det \gamma = \det\eta \, \det{^2} J = - \det{^2} J
 		\end{equation*}
 		\begin{equation*}
 			\left| \det J \right| = \sqrt{-\det\gamma} = \sqrt{-\gamma}
 		\end{equation*}
 	\end{frame}
 
-	
+	\begin{frame}
+		\frametitle{Dynamics of a Relativistic String -- The Nambu-Goto Action}
+		So write the action as:
+		\begin{equation*}
+			S_{NG} = -\frac{1}{2\pi\alpha'} \int d^2\sigma \, \sqrt{-\gamma}
+		\end{equation*}
+		This action in invariant under,
+		\begin{itemize}
+			\item Poincaré transformations
+			\item Reparametrization
+		\end{itemize}
+		and the eqations of motion (EoM) are given by:
+		\begin{equation*}
+			\partial_\alpha\left(\sqrt{-\gamma}\,\gamma^{\alpha\beta}\partial_\beta X^\mu\right) = 0
+		\end{equation*}
+		$\Rightarrow$ rather hard to quantize in this form! Alternatives?
+	\end{frame}
+
+	\subsubsection{The Polyakov Action}
+
+	\begin{frame}
+		\frametitle{Dynamics of a Relativistic String -- The Polyakov Action}
+		Way out: \textbf{The Polyakov Action}:
+		\begin{equation*}
+			S_P = -\frac{1}{4\pi\alpha'}\int d^2 \, \sigma \sqrt{-g} \, g^{\alpha\beta}\,\partial_\alpha X^\mu \partial_\beta X^\nu \, \eta_{\mu\nu}
+		\end{equation*}
+		The EoMs:
+		\begin{itemize}
+			\item for $X^\mu$:
+			\begin{itemize}
+				\item same as for the Nambu-Goto action!
+			\end{itemize}
+			\begin{equation*}
+				\partial_\alpha\left(\sqrt{-g}\,g^{\alpha\beta}\partial_\beta X^{\mu}\right) = 0
+			\end{equation*}
+			\item for $g_{\alpha\beta}$:
+			\begin{equation*}
+				g_{\alpha\beta} = 2 \frac{\partial_\alpha X^\mu \partial_\beta X^\nu \eta_{\mu\nu} }{g^{\rho\sigma}\partial_\rho X^\mu \partial_\sigma X^\nu \eta_{\mu\nu}} \equiv 2 \frac{\partial_\alpha X \partial_\beta X}{g^{\rho\sigma}\partial_\rho X \partial_\sigma X}
+			\end{equation*}
+		\end{itemize}
+		Gains of the Polyakov action?
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Dynamics of a Relativistic String -- The Polyakov Action}
+		Symmetries of the Polyakov action
+		\begin{equation*}
+			S_P = -\frac{1}{4\pi\alpha'}\int d^2 \, \sigma \sqrt{-g} \, g^{\alpha\beta}\,\partial_\alpha X^\mu \partial_\beta X^\nu \, \eta_{\mu\nu}
+		\end{equation*}
+		\begin{itemize}
+			\item Poincaré invariance
+			\item Reparametrization invariance
+			\item Invariance under:
+			\begin{equation*}
+				g'_{\alpha\beta} = \Omega^2(\sigma) g_{\alpha\beta}
+			\end{equation*}
+			$\Rightarrow$ \textbf{Weyl invariance}\\
+			However, using the conformal gauge and writing $g$ as
+			\begin{equation*}
+				g_{\alpha\beta} = e^{2\phi}\eta_{\alpha\beta}
+			\end{equation*}
+			can be undone by a Weyl transformation ($\phi=0$). Thus,
+			\begin{equation*}
+				g_{\alpha\beta} = \eta_{\alpha\beta}
+			\end{equation*}
+			\color{red} Plot of the transformation in action
+		\end{itemize}
+		
+	\end{frame}	
 	
 	\begin{frame}
 		\frametitle{Never forget the Titles!}
@@ -214,9 +284,9 @@
 	\begin{frame}
 		\frametitle{Covariant Quantization of the Solutions of the Nambu-Goto Action}
 		
-		\begin{equation}
+		\begin{equation*}
 			S = \frac{1}{2\pi\alpha'}\int\sqrt{-\det g} \, \partial_\mu
-		\end{equation}
+		\end{equation*}
 	
 	\end{frame}	
 

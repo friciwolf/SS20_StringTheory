@@ -14,6 +14,7 @@
 \usepackage{verbatim}
 \usepackage{caption}
 \usepackage{mathtools}
+\usepackage{physics}
 \usepackage[export]{adjustbox}
 \usepackage[backend=bibtex,style=numeric]{biblatex}
 
@@ -321,7 +322,7 @@
 			\item Then:
 			\begin{align*}
 				\left(\partial_-X\right)^2 &= \frac{\alpha'}{2} \sum_{n,p} \alpha_m \alpha_n e^{-i(n+m)\sigma^-}\\
-				& = \alpha' \sum_n \underbrace{\frac{1}{2} \sum_m \alpha_m \alpha_{n-m} e^{-in\sigma^-}}_{L_n} \stackrel{!}{=} 0
+				& = \alpha' \sum_n \underbrace{\frac{1}{2} \sum_m \alpha_m \alpha_{n-m}}_{L_n} e^{-in\sigma^-} \stackrel{!}{=} 0
 			\end{align*}
 		\end{itemize}
 	\end{frame}
@@ -334,7 +335,7 @@
 		\end{equation*}
 		However, $L_0$ contains the mass $M = -p^2$ as:
 		\begin{align*}
-			L_0 &= \frac{\alpha'}{2}p^2 + \frac{1}{2} \sum_{m>0} \alpha_m \alpha_{-m} e^{-in\sigma^-} \\
+			L_0 &= \frac{\alpha'}{4}p^2 + \frac{1}{2} \sum_{m} \alpha_m \alpha_{-m} \\
 			& \Rightarrow M^2 = \frac{4}{\alpha'} \sum_{m>0}\alpha_m\alpha_{-m} = \frac{4}{\alpha'} \sum_{m>0}\tilde{\alpha}_m\tilde{\alpha}_{-m}
 		\end{align*}
 		$\Rightarrow$ \textbf{Level matching}
@@ -373,34 +374,42 @@
 		\frametitle{Covariant Quantization}
 		$1^{st}$ problem with this approach: appearance of ghosts, due to the relation:
 		\begin{equation*}
-			\left[\alpha^\mu_n, \alpha^\nu_m\right] = n \eta^{\mu\nu} \delta_{n,-m} \quad \rightarrow \quad \text{negative norms} \quad \rightarrow \quad \text{ghosts (unphysical)}
+			\left[\alpha^\mu_n, \alpha^\nu_m\right] = n \eta^{\mu\nu} \delta_{n,-m} \quad \rightarrow \quad \text{negative norms for } \mu=\nu=0 \quad \rightarrow \quad \text{ghosts (unphysical)}
 		\end{equation*}
-		$2^{nd}$ problem: operator ambiguity in $L_n$; how to order the operators?
-		\begin{equation*}
-			L_n = \frac{1}{2} \sum_{m} \alpha_{n-m} \alpha_m
-		\end{equation*}
-		\color{red} \Large Include the introduction of $a$ here?
+		$2^{nd}$ problem: What about the constraints $L_n = \tilde{L}_n = 0$? How to order the operators in $L_n$?
+		\begin{itemize}
+			\item one could require for any physical state $\ket{\varphi}$:
+			\begin{align*}
+				&\qquad \bra{\varphi}L_n\ket{\varphi} = \bra{\phi}\tilde{L}_n\ket{\varphi} = 0 \\
+				& \Rightarrow L_n\ket{\varphi} = 0, \, n>0 \quad (L^\dagger_n = L_{-n}) \\
+			\end{align*}
+			\item For $L_0$:
+			\begin{align*}
+				 \qquad L_0 = \sum_{m=1}^{\infty} \alpha_{-m} \alpha_m + \frac{1}{2} &\alpha^2_0 \\
+				 \Rightarrow (L_0 - a)\ket{\varphi} = 0 \quad & \rightarrow \quad  M^2 = \frac{4}{\alpha'} \left(-a+\sum_{m=1}^{\infty}\alpha_{-m}\alpha_m\right) \\
+			\end{align*}
+		\end{itemize}
 	\end{frame}
 
 	\section{Quantization in the Lightcone Gauge}
 	
 	\begin{frame}
 		\frametitle{Quantization in the Lightcone Gauge}
-		To resolve these problems, introduce lightcone coordinates \color{red}{how deeply?} \color{black}
+		To resolve these problems, introduce lightcone coordinates:
 		\begin{align*}
-			X^\pm = \sqrt{\frac{1}{2}} \left(X^0\right.&\left.\pm X^{D-1}\right)\\
-			\Rightarrow ds^2 = -2\cdot dX^+dX^- &+ \sum_{i=1}^{D-2}dX^idX^i
+			X^\pm = \sqrt{\frac{1}{2}} \left(X^0\right.&\left.\pm X^{D-1}\right)
+%			\Rightarrow ds^2 = -2\cdot dX^+dX^- &+ \sum_{i=1}^{D-2}dX^idX^i
 		\end{align*}
-		and solve the EoMs with $X^\pm = X^\pm_L(\sigma^+) + X^\pm_R(\sigma^-)$
+		and solve the EoMs $\left(\partial_+\partial_-X^\mu = 0, \quad (\partial_+X)^2 = 0, \quad (\partial_-X)^2 = 0 \right)$  in the lightcone gauge: 
 		\begin{equation*}
 %			\begin{cases}
-				\partial_+\partial_-X^\mu = 0 \quad (\partial_+X)^2 = 0 \quad (\partial_-X)^2 = 0 
+			X^+ = x^+ + \alpha'p^+ \tau = \underbrace{\frac{1}{2}x^+ + \frac{1}{2} \alpha' p^+ \sigma^+}_{X^+_L(\sigma^+)} + \underbrace{\frac{1}{2}x^+ + \frac{1}{2} \alpha' p^+ \sigma^-}_{X^+_L(\sigma^-)}
 %			\end{cases}
 		\end{equation*}
 		Solution for $X^-$:
 		\begin{align*}
-			X^-_L(\sigma^+) &= \frac{1}{2}x^⁻ + \frac{1}{2} \alpha' p^- \sigma^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n}\tilde{\alpha}^- e^{-in\sigma^+}\\
-			X^-_R(\sigma^-) &= \frac{1}{2}x^- + \frac{1}{2} \alpha' p^-\sigma^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n}\alpha^- e^{-in\sigma^-} \\
+			X^-_L(\sigma^+) &= \frac{1}{2}x^- + \frac{1}{2} \alpha' p^- \sigma^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n}\tilde{\alpha}^-_n e^{-in\sigma^+}\\
+			X^-_R(\sigma^-) &= \frac{1}{2}x^- + \frac{1}{2} \alpha' p^-\sigma^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{1}{n}\alpha^-_n e^{-in\sigma^-} \\
 		\end{align*}
 	\end{frame}
 
@@ -412,16 +421,33 @@
 		\end{equation*}
 		And, the level matching condition becomes:
 		\begin{equation*}
-			M^2 = \frac{4}{\alpha'} \sum_{i=1}^{D-2}\sum_{max}^{n>0}\alpha^i_{-n}\alpha^i_n = \frac{4}{\alpha'} \sum_{i=1}^{D-2}\sum_{max}^{n>0}\tilde{\alpha}^i_{-n}\tilde{\alpha}^i_n 
+			M^2 = \frac{4}{\alpha'} \sum_{i=1}^{D-2}\sum_{n>0}^{}\alpha^i_{-n}\alpha^i_n = \frac{4}{\alpha'} \sum_{i=1}^{D-2}\sum_{n>0}^{}\tilde{\alpha}^i_{-n}\tilde{\alpha}^i_n 
 		\end{equation*}
+		Gain: we have 2(D-2) oscillator modes with spacial indices only $\Rightarrow$ after quantization we only have positive norms, due to
+		\begin{equation*}
+			\left[\alpha^i_n,\alpha^j_m\right]=\left[\tilde\alpha^i_n,\tilde\alpha^j_m\right] = n\delta^{ij}\delta_{n,-m}
+		\end{equation*}
+		$\Rightarrow$ 1$^{\text{st}}$ problem solved.
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Quantization \& Constraints}
+		What about the mass spectrum and the ordering ambiguity?\\
+		Take the classical result and swap the operators using the commutator 			$\left[\alpha^i_n,\alpha^j_{-m}\right]= n\delta^{ij}\delta_{n,m}$
+		\begin{equation*}
+			M^2 = \frac{4}{\alpha'} \left(\frac{1}{2}\sum_{i=1}^{D-2}\sum_{n\neq 0}^{}\alpha^i_{-n}\alpha^i_n -a \right) = \frac{4}{\alpha'} \left(\sum_{i=1}^{D-2}\sum_{n>0}\alpha^i_{-n}\alpha^i_n+\frac{D-2}{2}\sum_{n>0}n\right)
+		\end{equation*}
+		Interpreting the term $\sum_{n>0}n$:
+		\begin{align*}
+			\sum_{n>0}n &= \lim_{\epsilon\rightarrow 0} \sum_{n>0}ne^{-\epsilon n} = -\frac{\partial}{\partial\epsilon}\sum_{n>0}e^{-\epsilon n} = \\
+			& = -\frac{\partial}{\partial\epsilon} (1-e^{-\epsilon})^{⁻1} = \frac{1}{\epsilon^2}-\frac{1}{12}+O(\epsilon)
+		\end{align*}
+		After renormalization: $\sum n = -\frac{1}{12}$ \quad $\Rightarrow$ \quad $a=-(D-2)/24$
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{The Critical Dimension \& Resolving the Ambiguity}
+		\frametitle{The Critical Dimension}
+		What is the value $D$?
 	\end{frame}
 
 
